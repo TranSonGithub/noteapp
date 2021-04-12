@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>Note app</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="width: 50%; margin: 10% auto 0">
+            <div class="card-header text-center text-white bg-primary">Hiển thị ghi chú </div>
+            <form class="form-group" action="/notes/<%= note._id %>?_method=PUT" 
+                method="POST" style="width: 70%; margin: 10px auto">
+                <label for="tieude">Tiêu đề</label>
+                <input id="tieude" class="form-control my-2" type="text" name="head" value="<%= note.head %> ">
+                <label for="noidung">Nội dung</label>
+                <textarea id="noidung" class="form-control my-2" name="content" cols="30" rows="10" 
+                style="width: 100%;"><%= note.content %></textarea>
+                <a href="/notes" class="btn btn-secondary">Thoát</a>
+                <button type="submit" class="btn btn-success">Cập nhật</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
